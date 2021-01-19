@@ -47,6 +47,17 @@ echo "Regridding files to 1 degree by 1 degree ..."
 ##### Many year chunk files which span 1994-2014
 cdo remapbil,r360x180 -selvar,fgco2 fgco2_Omon_BCC-CSM2-MR_historical_r1i1p1f1_gn_185001-201412.nc fgco2_Omon_BCC-CSM2-MR_historical_r1i1p1f1_gn_185001-201412.rg.nc
 
+cdo remapbil,r360x180 -selvar,fgco2 fgco2_Omon_CNRM-ESM2-1_historical_r1i1p1f2_gn_185001-201412.nc fgco2_Omon_CNRM-ESM2-1_historical_r1i1p1f2_gn_185001-201412.rg.nc
+
+cdo remapbil,r360x180 -selvar,fgco2 fgco2_Omon_CESM2-WACCM_historical_r1i1p1f1_gn_185001-201412.nc fgco2_Omon_CNRM-ESM2-1_historical_r1i1p1f1_gn_185001-201412.rg.nc
+
+cdo remapbil,r360x180 -selvar,fgco2 fgco2_Omon_NorCPM1_historical_r1i1p1f1_gn_185001-201412.nc fgco2_Omon_NorCPM1_historical_r1i1p1f1_gn_185001-201412.rg.nc
+
+cdo remapbil,r360x180 -selvar,fgco2 fgco2_Omon_BCC-ESM1_historical_r1i1p1f1_gn_185001-201412.nc fgco2_Omon_BCC-ESM1_historical_r1i1p1f1_gn_185001-201412.rg.nc
+
+cdo remapbil,r360x180 -selvar,fgco2 fgco2_Omon_ACCESS-ESM1-5_historical_r1i1p1f1_gn_185001-201412.nc fgco2_Omon_ACCESS-ESM1-5_historical_r1i1p1f1_gn_185001-201412.rg.nc
+
+cdo remapbil,r360x180 -selvar,fgco2 fgco2_Omon_CMCC-ESM2_historical_r1i1p1f1_gn_185001-201412.nc fgco2_Omon_CMCC-ESM2_historical_r1i1p1f1_gn_185001-201412.rg.n
 
 # cdo remapbil,r360x180 -selvar,fgco2 fgco2_Omon_UKESM1-0-LL_historical_r1i1p1f2_gn_195001-201412.nc fgco2_Omon_UKESM1-0-LL_historical_r1i1p1f2_gn_195001-201412.rg.nc
 
@@ -73,6 +84,18 @@ echo "Concatenating model data which comes in ten year chunks ..."
 echo "Subextracting model data which comes in large chunks (e.g. 1850-2014) ..."
 cdo -selyear,1994/2014 fgco2_Omon_BCC-CSM2-MR_historical_r1i1p1f1_gn_185001-201412.rg.nc fgco2_Omon_BCC-CSM2-MR_historical_r1i1p1f1_gn_199401-201412.rg.nc
 
+cdo -selyear,1994/2014 fgco2_Omon_CNRM-ESM2-1_historical_r1i1p1f2_gn_185001-201412.rg.nc fgco2_Omon_CNRM-ESM2-1_historical_r1i1p1f2_gn_199401-201412.rg.nc
+
+cdo -selyear,1994/2014 fgco2_Omon_CESM2-WACCM_historical_r1i1p1f1_gn_185001-201412.rg.nc fgco2_Omon_CESM2-WACCM_historical_r1i1p1f1_gn_199401-201412.rg.nc
+
+cdo -selyear,1994/2014 fgco2_Omon_NorCPM1_historical_r1i1p1f1_gn_185001-201412.rg.nc fgco2_Omon_NorCPM1_historical_r1i1p1f1_gn_199401-201412.rg.nc
+
+cdo -selyear,1994/2014 fgco2_Omon_BCC-ESM1_historical_r1i1p1f1_gn_185001-201412.rg.nc fgco2_Omon_BCC-ESM1_historical_r1i1p1f1_gn_199401-201412.rg.nc
+
+cdo -selyear,1994/2014 fgco2_Omon_ACCESS-ESM1-5_historical_r1i1p1f1_gn_185001-201412.rg.nc fgco2_Omon_ACCESS-ESM1-5_historical_r1i1p1f1_gn_199401-201412.rg.nc
+
+cdo -selyear,1994/2014 fgco2_Omon_CMCC-ESM2_historical_r1i1p1f1_gn_185001-201412.rg.nc fgco2_Omon_CMCC-ESM2_historical_r1i1p1f1_gn_199401-201412.rg.n
+
 # cdo -selyear,1994/2014 fgco2_Omon_UKESM1-0-LL_historical_r1i1p1f2_gn_195001-201412.rg.nc fgco2_Omon_UKESM1-0-LL_historical_r1i1p1f2_gn_199401-201412.rg.nc
 
 
@@ -86,6 +109,18 @@ echo "Spatially extracting southern ocean data points from the regridded 1994-20
 
 cdo sellonlatbox,-180,180,-40,-80 fgco2_Omon_BCC-CSM2-MR_historical_r1i1p1f1_gn_199401-201412.rg.nc fgco2_Omon_BCC-CSM2-MR_historical_r1i1p1f1_gn_199401-201412.rg.so.nc
 
+cdo sellonlatbox,-180,180,-40,-80 fgco2_Omon_CNRM-ESM2-1_historical_r1i1p1f2_gn_185001-201412.rg.nc fgco2_Omon_CNRM-ESM2-1_historical_r1i1p1f2_gn_199401-201412.rg.so.nc
+
+cdo sellonlatbox,-180,180,-40,-80 fgco2_Omon_CESM2-WACCM_historical_r1i1p1f1_gn_185001-201412.rg.nc fgco2_Omon_CESM2-WACCM_historical_r1i1p1f1_gn_199401-201412.rg.so.nc
+
+cdo sellonlatbox,-180,180,-40,-80 fgco2_Omon_NorCPM1_historical_r1i1p1f1_gn_185001-201412.rg.nc fgco2_Omon_NorCPM1_historical_r1i1p1f1_gn_199401-201412.rg.so.nc
+
+cdo sellonlatbox,-180,180,-40,-80 fgco2_Omon_BCC-ESM1_historical_r1i1p1f1_gn_185001-201412.rg.nc fgco2_Omon_BCC-ESM1_historical_r1i1p1f1_gn_199401-201412.rg.so.nc
+
+cdo sellonlatbox,-180,180,-40,-80 fgco2_Omon_ACCESS-ESM1-5_historical_r1i1p1f1_gn_185001-201412.rg.nc fgco2_Omon_ACCESS-ESM1-5_historical_r1i1p1f1_gn_199401-201412.rg.so.nc
+
+cdo sellonlatbox,-180,180,-40,-80 fgco2_Omon_CMCC-ESM2_historical_r1i1p1f1_gn_185001-201412.rg.nc fgco2_Omon_CMCC-ESM2_historical_r1i1p1f1_gn_199401-201412.rg.so.nc
+
 # cdo sellonlatbox,-180,180,-40,-80  fgco2_Omon_UKESM1-0-LL_historical_r1i1p1f2_gn_199401-201412.rg.nc  fgco2_Omon_UKESM1-0-LL_historical_r1i1p1f2_gn_199401-201412.rg.so.nc
 
 
@@ -96,7 +131,20 @@ echo "Removing the cell_measures component from the regridded southern ocean 199
 # ncatted -a ,[variable name],d,cell_measures,  inputfile.rg.so.nc  outputfile.rg.so.fix.nc
 
 
-ncatted -a ,fgco2,d,cell_measures,  fgco2_Omon_BCC-CSM2-MR_historical_r1i1p1f1_gn_199401-201412.rg.so.nc  fgco2_Omon_BCC-CSM2-MR_historical_r1i1p1f1_gn_199401-201412.rg.so.fix.nc
+ncatted -a ,fgco2,d,cell_measures, fgco2_Omon_BCC-CSM2-MR_historical_r1i1p1f1_gn_199401-201412.rg.so.nc  fgco2_Omon_BCC-CSM2-MR_historical_r1i1p1f1_gn_199401-201412.rg.so.fix.nc
+
+ncatted -a ,fgco2,d,cell_measures, fgco2_Omon_CNRM-ESM2-1_historical_r1i1p1f2_gn_185001-201412.rg.so.nc fgco2_Omon_CNRM-ESM2-1_historical_r1i1p1f2_gn_199401-201412.rg.so.fix.nc
+
+ncatted -a ,fgco2,d,cell_measures, fgco2_Omon_CESM2-WACCM_historical_r1i1p1f1_gn_185001-201412.rg.so.nc fgco2_Omon_CESM2-WACCM_historical_r1i1p1f1_gn_199401-201412.rg.so.fix.nc
+
+ncatted -a ,fgco2,d,cell_measures, NorCPM1_historical_r1i1p1f1_gn_185001-201412.rg.so.nc fgco2_Omon_NorCPM1_historical_r1i1p1f1_gn_199401-201412.rg.so.fix.nc
+
+ncatted -a ,fgco2,d,cell_measures, fgco2_Omon_BCC-ESM1_historical_r1i1p1f1_gn_185001-201412.rg.so.nc fgco2_Omon_BCC-ESM1_historical_r1i1p1f1_gn_199401-201412.rg.so.fix.nc
+
+ncatted -a ,fgco2,d,cell_measures, fgco2_Omon_ACCESS-ESM1-5_historical_r1i1p1f1_gn_185001-201412.rg.so.nc fgco2_Omon_ACCESS-ESM1-5_historical_r1i1p1f1_gn_199401-201412.rg.so.fix.nc
+
+ncatted -a ,fgco2,d,cell_measures, fgco2_Omon_CMCC-ESM2_historical_r1i1p1f1_gn_185001-201412.rg.so.nc fgco2_Omon_CMCC-ESM2_historical_r1i1p1f1_gn_199401-201412.rg.so.fix.nc
+
 
 #ncatted -a ,fgco2,d,cell_measures, fgco2_Omon_UKESM1-0-LL_historical_r1i1p1f2_gn_199401-201412.rg.nc fgco2_Omon_UKESM1-0-LL_historical_r1i1p1f2_gn_199401-201412.rg.so.fix.nc
 
@@ -110,7 +158,19 @@ echo "Masking out land points from regridded southern ocean 1994-2104 fixed meta
 
 cdo setctomiss,1.0e20  fgco2_Omon_BCC-CSM2-MR_historical_r1i1p1f1_gn_199401-201412.rg.so.fix.nc fgco2_Omon_BCC-CSM2-MR_historical_r1i1p1f1_gn_199401-201412.rg.so.fix.mask.nc
 
-#cdo setctomiss,1.0e20 fgco2_Omon_UKESM1-0-LL_historical_r1i1p1f2_gn_199401-201412.rg.so.fix.nc fgco2_Omon_UKESM1-0-LL_historical_r1i1p1f2_gn_199401-201412.rg.so.fix.mask.nc
+cdo setctomiss,1.0e20  fgco2_Omon_CNRM-ESM2-1_historical_r1i1p1f2_gn_199401-201412.rg.so.fix.nc fgco2_Omon_CNRM-ESM2-1_historical_r1i1p1f2_gn_199401-201412.rg.so.fix.mask.nc
+
+cdo setctomiss,1.0e20  fgco2_Omon_CESM2-WACCM_historical_r1i1p1f1_gn_199401-201412.rg.so.fix.nc fgco2_Omon_CESM2-WACCM_historical_r1i1p1f1_gn_199401-201412.rg.so.fix.mask.nc
+
+cdo setctomiss,1.0e20  fgco2_Omon_NorCPM1_historical_r1i1p1f1_gn_199401-201412.rg.so.fix.nc fgco2_Omon_NorCPM1_historical_r1i1p1f1_gn_199401-201412.rg.so.fix.mask.nc
+
+cdo setctomiss,1.0e20  fgco2_Omon_BCC-ESM1_historical_r1i1p1f1_gn_199401-201412.rg.so.fix.nc fgco2_Omon_BCC-ESM1_historical_r1i1p1f1_gn_199401-201412.rg.so.fix.mask.nc
+
+cdo setctomiss,1.0e20  fgco2_Omon_ACCESS-ESM1-5_historical_r1i1p1f1_gn_199401-201412.rg.so.fix.nc fgco2_Omon_ACCESS-ESM1-5_historical_r1i1p1f1_gn_199401-201412.rg.so.fix.mask.nc
+
+cdo setctomiss,1.0e20  fgco2_Omon_CMCC-ESM2_historical_r1i1p1f1_gn_199401-201412.rg.so.fix.nc fgco2_Omon_CMCC-ESM2_historical_r1i1p1f1_gn_199401-201412.rg.so.fix.mask.nc
+
+cdo setctomiss,1.0e20 fgco2_Omon_UKESM1-0-LL_historical_r1i1p1f2_gn_199401-201412.rg.so.fix.nc fgco2_Omon_UKESM1-0-LL_historical_r1i1p1f2_gn_199401-201412.rg.so.fix.mask.nc
 
 
 
@@ -119,4 +179,3 @@ cdo setctomiss,1.0e20  fgco2_Omon_BCC-CSM2-MR_historical_r1i1p1f1_gn_199401-2014
 # ls -l *rg.so.fix.mask.nc
 echo "Final postprocessed files end in *rg.so.fix.mask.nc ... :"
 ls -l *rg.so.fix.mask.nc
-
